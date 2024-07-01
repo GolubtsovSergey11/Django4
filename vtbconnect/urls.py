@@ -20,6 +20,5 @@ from women import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("women.urls")),
-
+    path("women", include("women.urls")),
 ]
