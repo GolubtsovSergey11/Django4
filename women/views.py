@@ -1,6 +1,6 @@
 import random
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 
 class Women():
@@ -20,5 +20,9 @@ class Women():
         return HttpResponse(f"<h2> Выбрали случайное число от {start} до {stop}, "
                             f"и получили число {rand}<br>"
                             f"slug {nums_id}")
+
+    def page_not_found(request, exception):
+        return HttpResponseNotFound(f"Ваша страница не найдена")
+
 
 

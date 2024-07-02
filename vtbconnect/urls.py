@@ -22,3 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("women.urls")),
 ]
+
+hendler404 = page_not_found
