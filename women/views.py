@@ -21,7 +21,7 @@ class Women():
                             f"slug {nums_id}")
 
     def cars(request, cars_id):
-        return HttpResponse(f"У Вас Porshe 911?") if cars_id == 911 else redirect(Women.index)
+        return HttpResponse(f"У Вас Porshe 911?") if cars_id == 911 else redirect('home')
 
     def page_not_found(request, exception):
         return HttpResponseNotFound("Ваша страница не найдена")
