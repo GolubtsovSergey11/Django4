@@ -1,6 +1,6 @@
 import random
 from django.http import HttpResponse, HttpResponseNotFound, Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 class Women():
 
@@ -21,7 +21,7 @@ class Women():
                             f"slug {nums_id}")
 
     def cars(request, cars_id):
-        return HttpResponse(f"У Вас Porshe 911?") if cars_id == 911 else HttpResponse(f"Вас другая машина?")
+        return HttpResponse(f"У Вас Porshe 911?") if cars_id == 911 else redirect("/")
 
     def page_not_found(request, exception):
         return HttpResponseNotFound("Ваша страница не найдена")
