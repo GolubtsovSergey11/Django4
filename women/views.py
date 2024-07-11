@@ -20,8 +20,12 @@ class Women():
                             f"и получили число {rand}<br>"
                             f"slug {nums_id}")
 
-    def cars(request):
-        return HttpResponse(f"Продолжаем обучение")
+    def cars(request, cars_id):
+        if cars_id == 911:
+            return HttpResponse(f"У Вас Porshe 911?")
+        else:
+            return HttpResponse(f"Вас другая машина?")
+
 
     def page_not_found(request, exception):
         return HttpResponseNotFound("Ваша страница не найдена")
