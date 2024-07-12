@@ -6,9 +6,17 @@
 </head>
 <body>
 
-<h1><i>{{ title }}</i></h1>
+<h1><i>{{ title|capfirst }}</i></h1>
 <br>
-<h3><i>{{ about }}</i></h3>
+<h3><i>{{ about|capfirst  }}</i></h3>
+
+<p>{{ float|add:50 }}</p>
+<p>{{ menu|join:" | " }}</p>
+<p>{{ lst|join:" | " }}</p>
+<p>{{ str|addslashes }}</p>
+<p>{{ dict }}</p>
+<p>{{ obj.a }} - {{ obj.b }}</p>
+<p>{{ url }}</p>
 
 </body>
 </html>
