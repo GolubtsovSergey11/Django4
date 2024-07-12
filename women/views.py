@@ -3,9 +3,14 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpRespons
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.template.loader import render_to_string
+from django.template.defaultfilters import slugify
 
 
 class Women():
+
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
 
     def index(request):
         # t = render_to_string('women/index.html')
@@ -13,7 +18,14 @@ class Women():
         return render(request, 'women/index.html')
 
     def about(request):
-        data = {'title': "О сайте)", "about": "Интересно узнать о нас?"}
+        data = {'title': "о сайте)", "about": "интересно узнать о нас?",
+                "float": 28.54,
+                "menu": ["Главная", " Контакты"],
+                "lst": [23, "abc", True],
+                "str": "I'm Sergey",
+                "dict": {"key-1" : "value_1", "key-2" : "value_2"},
+                "obj": Women(1, 2),
+                "url": slugify("The best")}
         return render(request, "women/about.html", data)
 
     def categories(request, cats_id):
