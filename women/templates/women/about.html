@@ -10,13 +10,23 @@
 <br>
 <h3><i>{{ about|capfirst  }}</i></h3>
 
-<p>{{ float|add:50 }}</p>
+
 <p>{{ menu|join:" | " }}</p>
-<p>{{ lst|join:" | " }}</p>
-<p>{{ str|addslashes }}</p>
-<p>{{ dict }}</p>
-<p>{{ obj.a }} - {{ obj.b }}</p>
-<p>{{ url }}</p>
+
+
+<ul>
+    {% for p in posts %}
+        {% if p.is_published %}
+            <li>
+                <h2>{{ p.title }}</h2>
+                <p><i>{{ p.content }}</i></p>
+                {% if not forloop.last %}
+                    <hr>
+                {% endif %}
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
 
 </body>
 </html>
