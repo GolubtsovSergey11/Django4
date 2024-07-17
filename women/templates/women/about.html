@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h1><i>{{ title|capfirst }}</i></h1>
-<br>
-<h3><i>{{ about|capfirst  }}</i></h3>
-
-
-<p>{{ menu|join:" | " }}</p>
-
-
-<ul>
-    {% for p in posts %}
-        {% if p.is_published %}
-            <li>
-                <h2>{{ p.title }}</h2>
-                <p><i>{{ p.content }}</i></p>
-                {% if not forloop.last %}
-                    <hr>
-                {% endif %}
-            </li>
-        {% endif %}
-    {% endfor %}
-</ul>
-
-</body>
-</html>
+{% block content %}
+<h1>{{ title }}</h1>
+{% endblock %}
