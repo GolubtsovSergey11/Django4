@@ -1,0 +1,35 @@
+{% load static %}
+{% load women_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<link type="text/css" href="{% static 'women/css/styles.css' %}" rel="stylesheet">
+<h1><i>Главная страница!</i></h1>
+
+{% get_categories as categories %}
+<ul>
+{% for cat in categories %}
+     <li><a href = "#"> {{ cat.name }}</a> </li>
+{% endfor %}
+</ul>
+<ul>
+
+    <li> <a href = "{% url 'home' %}"> Главная страница</a> </li>
+    <li> <a href = "{% url 'about' %}"> О сайте</a> </li>
+    <li> <a href = "{% url 'addpage' %}"> Добавить статью</a> </li>
+    <li> <a href = "{% url 'help' %}"> Обратная связь</a> </li>
+    <li> <a href = "{% url 'login' %}"> Войти</a> </li>
+    <li> <a href = "{% url 'contact' %}"> Контакты</a> </li>
+
+
+</ul>
+{% block content %}  {% endblock %}
+
+
+
+</body>
+</html>
