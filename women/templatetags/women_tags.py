@@ -17,3 +17,11 @@ def sportsmen():
     return views.world_sport
 
 
+#включающий тэг
+
+#в декоратор передаем путь шаблона в который вернется словарь {'categories': cats}
+#то есть этот тэг будет возвращать сформированную html страницу list_categories.html
+@register.inclusion_tag('women/list_categories.html')
+def show_categories():
+    cats = views.cats_db
+    return {'categories': cats}
