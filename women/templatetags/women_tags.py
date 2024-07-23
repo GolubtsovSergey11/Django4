@@ -7,7 +7,12 @@ import women.views as views
 register = template.Library()
 
 
-@register.simple_tag()
+@register.simple_tag(name="getcat")
 def get_categories():
     return views.cats_db
+
+@register.simple_tag(name='sportsmen')
+def sportsmen():
+    return views.world_sport
+
 
