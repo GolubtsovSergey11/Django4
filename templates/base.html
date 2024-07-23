@@ -10,7 +10,7 @@
 <link type="text/css" href="{% static 'women/css/styles.css' %}" rel="stylesheet">
 <h1><i>Главная страница!</i></h1>
 
-{% get_categories as categories %}
+{% getcat as categories %}
 <ul>
 {% for cat in categories %}
      <li><a href = "#"> {{ cat.name }}</a> </li>
@@ -27,6 +27,8 @@
 
 
 </ul>
+
+
 {% block content %}  {% endblock %}
 
 
